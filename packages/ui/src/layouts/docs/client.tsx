@@ -25,6 +25,7 @@ export function Navbar(props: ComponentProps<'header'>) {
         !isTransparent && 'bg-fd-background/80',
         props.className,
       )}
+      data-liquid="tinted-header"
     >
       {props.children}
     </header>

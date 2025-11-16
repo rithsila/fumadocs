@@ -204,6 +204,7 @@ export function PageTOCPopover(props: ComponentProps<'div'>) {
             open && 'shadow-lg',
             props.className,
           )}
+          data-liquid="tinted-header"
           style={{
             ...props.style,
             top: 'calc(var(--fd-banner-height) + var(--fd-nav-height))',

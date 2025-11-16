@@ -1,0 +1,50 @@
+---
+title: Liquid Tinted Style Guide
+description: Design tokens and component guidelines for the Liquid aesthetic.
+---
+
+## Tokens
+
+```css
+@import 'fumadocs-ui/css/liquid-tinted.css';
+
+/* Core */
+--color-fd-background
+--color-fd-foreground
+--color-fd-muted
+--color-fd-muted-foreground
+--color-fd-card
+--color-fd-card-foreground
+--color-fd-popover
+--color-fd-popover-foreground
+--color-fd-border
+--color-fd-ring
+
+/* Accent */
+--color-fd-primary
+--color-fd-primary-foreground
+--color-fd-secondary
+--color-fd-secondary-foreground
+--color-fd-accent
+--color-fd-accent-foreground
+```
+
+## Surfaces
+
+- Card and popover use translucent tint with backdrop blur.
+- Hover states gently increase tint and inner shadow.
+
+## Typography
+
+- System stack mapped to `--font-sans` under Liquid activation.
+- Heading weights use medium to semibold depending on size.
+
+## Components
+
+- Buttons: primary uses subtle gradient, consistent focus ring.
+- Inputs: unified ring and tint background.
+- Cards: glass surface with radial tint accents.
+
+## Modes
+
+- Light and dark palettes provided, maintaining contrast.

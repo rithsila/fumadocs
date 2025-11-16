@@ -20,6 +20,7 @@ const itemVariants = cva(
 const full = [
   ['light', Sun] as const,
   ['dark', Moon] as const,
+  ['amoled', Moon] as const,
   ['system', Airplay] as const,
 ];
 
@@ -28,7 +29,7 @@ export function ThemeToggle({
   mode = 'light-dark',
   ...props
 }: HTMLAttributes<HTMLElement> & {
-  mode?: 'light-dark' | 'light-dark-system';
+  mode?: 'light-dark' | 'light-dark-system' | 'light-dark-amoled-system';
 }) {
   const { setTheme, theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -54,7 +55,7 @@ export function ThemeToggle({
         {...props}
       >
         {full.map(([key, Icon]) => {
-          if (key === 'system') return;
+          if (key === 'system' || key === 'amoled') return;
 
           return (
             <Icon
@@ -72,7 +73,7 @@ export function ThemeToggle({
 
   return (
     <div className={container} data-theme-toggle="" {...props}>
-      {full.map(([key, Icon]) => (
+      {(mode === 'light-dark-amoled-system' ? full : full.filter(([key]) => key !== 'amoled')).map(([key, Icon]) => (
         <button
           key={key}
           aria-label={key}

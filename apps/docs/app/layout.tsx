@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html
       lang="en"
       className={`${geist.variable} ${mono.variable}`}
+      data-ui="liquid"
       suppressHydrationWarning
     >
       <Body>
