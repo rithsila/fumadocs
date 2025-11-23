@@ -1,0 +1,427 @@
+/**
+ * iOS 26 Animation System
+ * Fluid motion effects and micro-interactions
+ */
+
+@theme {
+  /* ============================================
+     Micro-Interaction Animations
+     ============================================ */
+
+  /* Button Press Animation */
+  @keyframes ios26-button-press {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.98);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Button Hover Glow */
+  @keyframes ios26-button-glow {
+    0%, 100% {
+      box-shadow: 
+        0 0 0 0 color-mix(in oklch, var(--color-fd-primary) 0%, transparent),
+        var(--shadow-ios26-medium);
+    }
+    50% {
+      box-shadow: 
+        0 0 20px 4px color-mix(in oklch, var(--color-fd-primary) 20%, transparent),
+        var(--shadow-ios26-elevated);
+    }
+  }
+
+  /* Card Lift on Hover */
+  @keyframes ios26-card-lift {
+    from {
+      transform: translateY(0) scale(1);
+      box-shadow: var(--shadow-ios26-medium);
+    }
+    to {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: var(--shadow-ios26-elevated);
+    }
+  }
+
+  /* Ripple Effect */
+  @keyframes ios26-ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  /* Shimmer Loading Effect */
+  @keyframes ios26-shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Pulse Animation */
+  @keyframes ios26-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Bounce Animation */
+  @keyframes ios26-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* ============================================
+     Fluid Motion Effects
+     ============================================ */
+
+  /* Smooth Fade In */
+  @keyframes ios26-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Fade In Up with Spring */
+  @keyframes ios26-fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade In Down */
+  @keyframes ios26-fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scale In with Spring */
+  @keyframes ios26-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Scale Out */
+  @keyframes ios26-scale-out {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+  }
+
+  /* Slide In from Right */
+  @keyframes ios26-slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Slide In from Left */
+  @keyframes ios26-slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* ============================================
+     Enhanced Component Animations
+     ============================================ */
+
+  /* Accordion Expand with Spring */
+  @keyframes ios26-accordion-expand {
+    from {
+      height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Accordion Collapse */
+  @keyframes ios26-accordion-collapse {
+    from {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Popover Enter */
+  @keyframes ios26-popover-enter {
+    from {
+      opacity: 0;
+      transform: scale(0.94) translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Popover Exit */
+  @keyframes ios26-popover-exit {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.94) translateY(-4px);
+    }
+  }
+
+  /* Dialog/Modal Enter */
+  @keyframes ios26-dialog-enter {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Dialog/Modal Exit */
+  @keyframes ios26-dialog-exit {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(1.02);
+    }
+  }
+
+  /* Backdrop Fade In */
+  @keyframes ios26-backdrop-in {
+    from {
+      opacity: 0;
+      backdrop-filter: blur(0px);
+    }
+    to {
+      opacity: 1;
+      backdrop-filter: blur(var(--blur-ios26-md));
+    }
+  }
+
+  /* ============================================
+     Special Effects
+     ============================================ */
+
+  /* Gradient Shift */
+  @keyframes ios26-gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Liquid Tint Pulse (Enhanced) */
+  @keyframes ios26-tint-pulse {
+    0%, 100% {
+      box-shadow: 
+        inset 0 0 0 0 color-mix(in oklch, var(--color-fd-primary) 0%, transparent);
+    }
+    50% {
+      box-shadow: 
+        inset 0 0 32px 12px color-mix(in oklch, var(--color-fd-primary) 15%, transparent);
+    }
+  }
+
+  /* Float Animation */
+  @keyframes ios26-float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  /* Glow Pulse */
+  @keyframes ios26-glow-pulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 0 transparent);
+    }
+    50% {
+      filter: drop-shadow(0 0 12px color-mix(in oklch, var(--color-fd-primary) 40%, transparent));
+    }
+  }
+
+  /* ============================================
+     Animation Utility Classes
+     ============================================ */
+
+  /* Button Press */
+  --animate-ios26-button-press: ios26-button-press var(--duration-ios26-fast) var(--ease-ios26-spring);
+  
+  /* Button Glow */
+  --animate-ios26-button-glow: ios26-button-glow 2s var(--ease-ios26-smooth) infinite;
+  
+  /* Card Lift */
+  --animate-ios26-card-lift: ios26-card-lift var(--duration-ios26-normal) var(--ease-ios26-out) forwards;
+  
+  /* Ripple */
+  --animate-ios26-ripple: ios26-ripple 600ms var(--ease-ios26-out);
+  
+  /* Shimmer */
+  --animate-ios26-shimmer: ios26-shimmer 2s linear infinite;
+  
+  /* Pulse */
+  --animate-ios26-pulse: ios26-pulse 2s var(--ease-ios26-smooth) infinite;
+  
+  /* Bounce */
+  --animate-ios26-bounce: ios26-bounce 1s var(--ease-ios26-spring) infinite;
+  
+  /* Fade In */
+  --animate-ios26-fade-in: ios26-fade-in var(--duration-ios26-normal) var(--ease-ios26-out);
+  
+  /* Fade In Up */
+  --animate-ios26-fade-in-up: ios26-fade-in-up var(--duration-ios26-normal) var(--ease-ios26-spring);
+  
+  /* Fade In Down */
+  --animate-ios26-fade-in-down: ios26-fade-in-down var(--duration-ios26-normal) var(--ease-ios26-spring);
+  
+  /* Scale In */
+  --animate-ios26-scale-in: ios26-scale-in var(--duration-ios26-normal) var(--ease-ios26-spring);
+  
+  /* Scale Out */
+  --animate-ios26-scale-out: ios26-scale-out var(--duration-ios26-fast) var(--ease-ios26-out);
+  
+  /* Slide In Right */
+  --animate-ios26-slide-in-right: ios26-slide-in-right var(--duration-ios26-normal) var(--ease-ios26-spring);
+  
+  /* Slide In Left */
+  --animate-ios26-slide-in-left: ios26-slide-in-left var(--duration-ios26-normal) var(--ease-ios26-spring);
+  
+  /* Accordion Expand */
+  --animate-ios26-accordion-expand: ios26-accordion-expand var(--duration-ios26-slow) var(--ease-ios26-spring);
+  
+  /* Accordion Collapse */
+  --animate-ios26-accordion-collapse: ios26-accordion-collapse var(--duration-ios26-normal) var(--ease-ios26-out);
+  
+  /* Popover Enter */
+  --animate-ios26-popover-enter: ios26-popover-enter var(--duration-ios26-normal) var(--ease-ios26-spring);
+  
+  /* Popover Exit */
+  --animate-ios26-popover-exit: ios26-popover-exit var(--duration-ios26-fast) var(--ease-ios26-out);
+  
+  /* Dialog Enter */
+  --animate-ios26-dialog-enter: ios26-dialog-enter var(--duration-ios26-slow) var(--ease-ios26-spring);
+  
+  /* Dialog Exit */
+  --animate-ios26-dialog-exit: ios26-dialog-exit var(--duration-ios26-normal) var(--ease-ios26-out);
+  
+  /* Backdrop In */
+  --animate-ios26-backdrop-in: ios26-backdrop-in var(--duration-ios26-slow) var(--ease-ios26-out);
+  
+  /* Gradient Shift */
+  --animate-ios26-gradient-shift: ios26-gradient-shift 8s var(--ease-ios26-smooth) infinite;
+  
+  /* Tint Pulse */
+  --animate-ios26-tint-pulse: ios26-tint-pulse 3s var(--ease-ios26-smooth) infinite;
+  
+  /* Float */
+  --animate-ios26-float: ios26-float 3s var(--ease-ios26-smooth) infinite;
+  
+  /* Glow Pulse */
+  --animate-ios26-glow-pulse: ios26-glow-pulse 2.5s var(--ease-ios26-smooth) infinite;
+}
+
+/* ============================================
+   Utility Classes for Animations
+   ============================================ */
+
+@utility animate-button-press {
+  animation: var(--animate-ios26-button-press);
+}
+
+@utility animate-card-lift {
+  animation: var(--animate-ios26-card-lift);
+}
+
+@utility animate-fade-in-up {
+  animation: var(--animate-ios26-fade-in-up);
+}
+
+@utility animate-scale-in {
+  animation: var(--animate-ios26-scale-in);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
