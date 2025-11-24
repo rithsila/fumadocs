@@ -20,8 +20,7 @@ import {
   Writing,
 } from '@/app/(home)/page.client';
 import ShadcnImage from './shadcn.png';
-import ContributorCounter from '@/components/contributor-count';
-import { owner, repo } from '@/lib/github';
+
 
 const headingVariants = cva('font-medium tracking-tight', {
   variants: {
@@ -82,17 +81,6 @@ export default function Page() {
             >
               Getting Started
             </Link>
-            <a
-              href="https://codesandbox.io/p/sandbox/github/fuma-nama/fumadocs-ui-template"
-              target="_blank"
-              rel="noreferrer noopener"
-              className={cn(
-                buttonVariants({ variant: 'secondary' }),
-                'max-sm:text-sm',
-              )}
-            >
-              Open CodeSandbox
-            </a>
           </div>
         </div>
       </div>
@@ -120,7 +108,7 @@ export default function Page() {
           />
           <CreateAppAnimation />
         </div>
-        <Feedback />
+
         <Aesthetics />
         <AnybodyCanWrite />
         <ForEngineers />
@@ -314,94 +302,7 @@ export async function DataView() {
   );
 }
 
-const feedback = [
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/124599',
-    user: 'shadcn',
-    role: 'Creator of Shadcn UI',
-    message: `You know how you end up rebuilding a full docs site every time you start a new project? 
 
-Fumadocs fixes this by giving you all the right blocks that you compose together.
-
-Like headless docs to build exactly what you need.`,
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/35677084',
-    user: 'Anthony Shew',
-    role: 'Turbo DX at Vercel',
-    message: `Major shoutout to @fuma_nama for making fumadocs, a gorgeous documentation framework that composes beautifully into the App Router.`,
-  },
-  {
-    user: 'Aiden Bai',
-    avatar: 'https://avatars.githubusercontent.com/u/38025074',
-    role: 'Creator of Million.js',
-    message: 'fumadocs is the best Next.js docs framework',
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/10645823',
-    user: 'David Blass',
-    role: 'Creator of Arktype',
-    message: `I'd have no shot building @arktypeio docs that looked half this good without it 😍`,
-  },
-];
-
-function Feedback() {
-  return (
-    <>
-      <div className={cn(cardVariants())}>
-        <h3
-          className={cn(headingVariants({ variant: 'h3', className: 'mb-6' }))}
-        >
-          A framework people love.
-        </h3>
-        <p className="mb-6">
-          Loved by teams and developers from startups like Unkey, Vercel, Orama
-          — evolving everyday to be your favourite docs framework.
-        </p>
-        <Link href="/showcase" className={cn(buttonVariants())}>
-          Showcase
-        </Link>
-      </div>
-      <div
-        className={cn(
-          cardVariants({
-            variant: 'secondary',
-            className: 'relative p-0',
-          }),
-        )}
-      >
-        <div className="absolute inset-0 z-2 inset-shadow-[0_10px_60px] inset-shadow-brand-secondary rounded-2xl" />
-        <Marquee className="p-8">
-          {feedback.map((item) => (
-            <div
-              key={item.user}
-              className="flex flex-col rounded-xl border bg-fd-card text-landing-foreground p-4 shadow-lg w-[320px]"
-            >
-              <p className="text-sm whitespace-pre-wrap">{item.message}</p>
-
-              <div className="mt-auto flex flex-row items-center gap-2 pt-4">
-                <Image
-                  src={item.avatar}
-                  alt="avatar"
-                  width="32"
-                  height="32"
-                  unoptimized
-                  className="size-8 rounded-full"
-                />
-                <div>
-                  <p className="text-sm font-medium">{item.user}</p>
-                  <p className="text-xs text-fd-muted-foreground">
-                    {item.role}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Marquee>
-      </div>
-    </>
-  );
-}
 
 function ForEngineers() {
   return (
@@ -537,32 +438,7 @@ function ForEngineers() {
           <span className="text-brand">content source</span>, Fumadocs works on
           MDX, Content Collections, and even your own CMS.
         </p>
-        <div className="flex flex-row w-fit items-center gap-4 mb-6">
-          {[
-            {
-              href: 'https://github.com/fuma-nama/fumadocs-basehub',
-              text: 'BaseHub CMS',
-            },
-            {
-              href: 'https://github.com/fuma-nama/fumadocs-sanity',
-              text: 'Sanity',
-            },
-            {
-              href: 'https://github.com/MFarabi619/fumadocs-payloadcms',
-              text: 'Payload CMS',
-            },
-          ].map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              rel="noreferrer noopener"
-              target="_blank"
-              className="text-sm text-brand hover:underline"
-            >
-              {item.text}
-            </a>
-          ))}
-        </div>
+
         <CodeBlock
           wrapper={{
             title: 'Fumadocs MDX',
@@ -699,22 +575,6 @@ function OpenSource() {
         <p className="mb-8">
           Fumadocs is 100% powered by passion and open source community.
         </p>
-        <div className="mb-8 flex flex-row items-center gap-2">
-          <Link
-            href="/sponsors"
-            className={cn(buttonVariants({ variant: 'primary' }))}
-          >
-            Sponsors
-          </Link>
-          <a
-            href="https://github.com/fuma-nama/fumadocs/graphs/contributors"
-            rel="noreferrer noopener"
-            className={cn(buttonVariants({ variant: 'secondary' }))}
-          >
-            Contributors
-          </a>
-        </div>
-        <ContributorCounter repoOwner={owner} repoName={repo} />
       </div>
       <div
         className={cn(
@@ -757,9 +617,6 @@ function OpenSource() {
             </svg>
             Fully open-source.
           </span>
-          <span className="mt-2 text-sm text-fd-muted-foreground">
-            Open source, available on Github.
-          </span>
         </li>
         <li>
           <span className="flex flex-row items-center gap-2 font-medium">
@@ -774,17 +631,6 @@ function OpenSource() {
           <Link href="/docs/ui" className={cn(buttonVariants())}>
             Read docs
           </Link>
-          <a
-            href="https://github.com/fuma-nama/fumadocs"
-            rel="noreferrer noopener"
-            className={cn(
-              buttonVariants({
-                variant: 'secondary',
-              }),
-            )}
-          >
-            Open GitHub
-          </a>
         </li>
       </ul>
     </>

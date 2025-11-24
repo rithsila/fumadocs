@@ -24,7 +24,8 @@ const CollapsibleContent = forwardRef<
       className={cn(
         'overflow-hidden',
         mounted &&
-          'data-[state=closed]:animate-fd-collapsible-up data-[state=open]:animate-fd-collapsible-down',
+          'data-[state=closed]:animate-[ios26-accordion-collapse_220ms_cubic-bezier(0.22,1,0.36,1)] ' +
+          'data-[state=open]:animate-[ios26-accordion-expand_320ms_cubic-bezier(0.34,1.56,0.64,1)]',
         props.className,
       )}
     >

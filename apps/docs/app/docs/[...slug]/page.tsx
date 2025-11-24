@@ -8,8 +8,6 @@ import { createMetadata, getPageImage } from '@/lib/metadata';
 import { source } from '@/lib/source';
 import { Wrapper } from '@/components/preview/wrapper';
 import { Mermaid } from '@/components/mdx/mermaid';
-import { Feedback } from '@/components/feedback';
-import { onRateAction, owner, repo } from '@/lib/github';
 import {
   HoverCard,
   HoverCardContent,
@@ -79,7 +77,6 @@ export default async function Page(props: PageProps<'/docs/[...slug]'>) {
         <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
         <ViewOptions
           markdownUrl={`${page.url}.mdx`}
-          githubUrl={`https://github.com/${owner}/${repo}/blob/dev/apps/docs/content/docs/${page.path}`}
         />
       </div>
       <div className="prose flex-1 text-fd-foreground/90">
@@ -129,7 +126,7 @@ export default async function Page(props: PageProps<'/docs/[...slug]'>) {
         />
         {page.data.index ? <DocsCategory url={page.url} /> : null}
       </div>
-      <Feedback onRateAction={onRateAction} />
+
     </DocsPage>
   );
 }

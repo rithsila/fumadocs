@@ -30,13 +30,24 @@ export function Card({ icon, title, description, ...props }: CardProps) {
       {...props}
       data-card
       className={cn(
-        'block rounded-xl border bg-fd-card p-4 text-fd-card-foreground transition-colors @max-lg:col-span-full',
-        props.href && 'hover:bg-fd-accent/80',
+        'block rounded-xl border bg-fd-card p-4 text-fd-card-foreground',
+        'transition-all duration-[220ms] ease-[cubic-bezier(0.22,1,0.36,1)]',
+        '@max-lg:col-span-full',
+        props.href && 
+          'hover:bg-fd-accent/80 hover:-translate-y-0.5 ' +
+          'hover:shadow-[0_4px_16px_color-mix(in_oklch,var(--color-fd-foreground)_4%,transparent),0_8px_32px_color-mix(in_oklch,var(--color-fd-primary)_4%,transparent)] ' +
+          'active:translate-y-0 active:scale-[0.99]',
         props.className,
       )}
     >
       {icon ? (
-        <div className="not-prose mb-2 w-fit shadow-md rounded-lg border bg-fd-muted p-1.5 text-fd-muted-foreground [&_svg]:size-4">
+        <div className={cn(
+          'not-prose mb-2 w-fit rounded-lg border p-1.5',
+          'bg-fd-muted/80 text-fd-muted-foreground [&_svg]:size-4',
+          'shadow-md backdrop-blur-sm',
+          'transition-all duration-[220ms] ease-[cubic-bezier(0.22,1,0.36,1)]',
+          props.href && 'group-hover:shadow-lg group-hover:scale-105'
+        )}>
           {icon}
         </div>
       ) : null}

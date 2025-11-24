@@ -9,8 +9,6 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { TypeTable } from 'fumadocs-ui/components/type-table';
 import { type ReactNode } from 'react';
 import { Wrapper } from './wrapper';
-import { GithubInfo } from 'fumadocs-ui/components/github-info';
-import { owner, repo } from '@/lib/github';
 import {
   Banner,
   DynamicCodeBlock,
@@ -271,15 +269,4 @@ export function banner(): ReactNode {
   );
 }
 
-export function githubInfo() {
-  return (
-    <Wrapper>
-      <GithubInfo
-        owner={owner}
-        repo={repo}
-        token={process.env.GITHUB_TOKEN}
-        className="not-prose bg-fd-card"
-      />
-    </Wrapper>
-  );
-}
+

@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/liquid-tinted.css';
+@import 'fumadocs-ui/css/ios26-animations.css';
 @import 'fumadocs-ui/css/preset.css';
 @import 'fumadocs-twoslash/twoslash.css';
 @import 'fumadocs-openapi/css/preset.css';
@@ -22,11 +23,11 @@
   --color-landing-foreground: #e4e2d0;
   --color-landing-foreground-200: #b7af7e;
 
-  --color-brand: #fff383;
+  --color-brand: hsl(45, 93%, 47%);
   --color-brand-secondary: #fc7744;
   --color-brand-secondary-foreground: #521700;
   --color-brand-foreground: black;
-  --color-brand-200: #fff7c8;
+  --color-brand-200: hsl(45, 93%, 60%);
 }
 
 @theme inline {
@@ -74,6 +75,7 @@
     var(--tw-gradient-stops)
   );
 
+  /* Enhanced Liquid Animations with iOS 26 Spring Curves */
   @keyframes liquid-fade {
     from {
       opacity: 0;
@@ -110,9 +112,10 @@
     }
   }
 
-  --animate-liquid-fade: liquid-fade 220ms ease-out;
-  --animate-liquid-slide: liquid-slide 280ms cubic-bezier(0.22, 1, 0.36, 1);
-  --animate-liquid-tint-pulse: liquid-tint-pulse 2.2s ease-in-out infinite;
+  /* Use iOS 26 Spring Curves */
+  --animate-liquid-fade: liquid-fade 220ms var(--ease-ios26-out, ease-out);
+  --animate-liquid-slide: liquid-slide 280ms var(--ease-ios26-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+  --animate-liquid-tint-pulse: liquid-tint-pulse 2.2s var(--ease-ios26-smooth, ease-in-out) infinite;
 }
 
 .ui {
@@ -133,14 +136,20 @@ body {
   background-color: var(--color-fd-background);
 }
 
+/* iOS 26 Typography - SF Pro Inspired Font Stack */
 [data-ui="liquid"] {
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
 }
 
 .dark {
   --headless-color: hsl(250 100% 80%);
-  --ui-color: #fff383;
+  --ui-color: hsl(45, 93%, 47%);
 }
 
 @keyframes circuit_1 {

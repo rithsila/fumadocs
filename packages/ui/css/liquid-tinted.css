@@ -1,84 +1,151 @@
 @import './default.css';
+@import './ios26-tokens.css';
 
 @theme {
-  --color-fd-background: oklch(96% 0.01 250);
-  --color-fd-foreground: oklch(22% 0.02 250);
-  --color-fd-muted: oklch(97% 0.01 250 / 0.7);
-  --color-fd-muted-foreground: oklch(45% 0.02 250);
-  --color-fd-popover: oklch(98% 0.01 250 / 0.6);
-  --color-fd-popover-foreground: oklch(28% 0.02 250);
-  --color-fd-card: oklch(96% 0.01 250 / 0.65);
-  --color-fd-card-foreground: oklch(24% 0.02 250);
-  --color-fd-border: oklch(80% 0.02 250 / 0.35);
-  --color-fd-primary: oklch(62% 0.17 248);
-  --color-fd-primary-foreground: oklch(98% 0 0);
-  --color-fd-secondary: oklch(95% 0.02 250 / 0.6);
-  --color-fd-secondary-foreground: oklch(22% 0.02 250);
-  --color-fd-accent: oklch(92% 0.06 250 / 0.5);
-  --color-fd-accent-foreground: oklch(18% 0.02 250);
-  --color-fd-ring: oklch(64% 0.15 248);
+  /* Enhanced iOS 26 Light Mode Colors */
+  --color-fd-background: oklch(97% 0.01 250);
+  --color-fd-foreground: oklch(20% 0.02 250);
+  --color-fd-muted: oklch(96% 0.01 250 / 0.75);
+  --color-fd-muted-foreground: oklch(48% 0.02 250);
+  --color-fd-popover: oklch(98% 0.01 250 / 0.65);
+  --color-fd-popover-foreground: oklch(26% 0.02 250);
+  --color-fd-card: oklch(97% 0.01 250 / 0.7);
+  --color-fd-card-foreground: oklch(22% 0.02 250);
+  --color-fd-border: oklch(82% 0.02 250 / 0.4);
+  
+  /* Enhanced Primary - More Vibrant Blue */
+  --color-fd-primary: oklch(64% 0.19 248);
+  --color-fd-primary-foreground: oklch(99% 0 0);
+  
+  --color-fd-secondary: oklch(96% 0.02 250 / 0.7);
+  --color-fd-secondary-foreground: oklch(20% 0.02 250);
+  
+  /* Enhanced Accent with Purple Tint */
+  --color-fd-accent: oklch(90% 0.08 260 / 0.6);
+  --color-fd-accent-foreground: oklch(16% 0.02 250);
+  
+  --color-fd-ring: oklch(66% 0.18 248);
+  
+  /* Semantic Colors */
+  --color-fd-info: var(--color-ios26-info);
+  --color-fd-success: var(--color-ios26-success);
+  --color-fd-warning: var(--color-ios26-warning);
+  --color-fd-error: var(--color-ios26-error);
 }
 
 .dark {
-  --color-fd-background: oklch(14% 0.02 250);
-  --color-fd-foreground: oklch(92% 0.01 250);
-  --color-fd-muted: oklch(18% 0.02 250 / 0.65);
-  --color-fd-muted-foreground: oklch(72% 0.02 250 / 0.85);
-  --color-fd-popover: oklch(16% 0.02 250 / 0.55);
-  --color-fd-popover-foreground: oklch(86% 0.01 250);
-  --color-fd-card: oklch(15% 0.02 250 / 0.6);
+  /* Enhanced iOS 26 Dark Mode Colors */
+  --color-fd-background: oklch(13% 0.02 250);
+  --color-fd-foreground: oklch(94% 0.01 250);
+  --color-fd-muted: oklch(17% 0.02 250 / 0.7);
+  --color-fd-muted-foreground: oklch(74% 0.02 250 / 0.9);
+  --color-fd-popover: oklch(15% 0.02 250 / 0.6);
+  --color-fd-popover-foreground: oklch(88% 0.01 250);
+  --color-fd-card: oklch(14% 0.02 250 / 0.65);
   --color-fd-card-foreground: oklch(96% 0.01 250);
-  --color-fd-border: oklch(40% 0.02 250 / 0.25);
-  --color-fd-primary: oklch(78% 0.18 248);
-  --color-fd-primary-foreground: oklch(10% 0 0);
-  --color-fd-secondary: oklch(18% 0.02 250 / 0.6);
-  --color-fd-secondary-foreground: oklch(92% 0.01 250);
-  --color-fd-accent: oklch(36% 0.08 250 / 0.35);
-  --color-fd-accent-foreground: oklch(90% 0.01 250);
-  --color-fd-ring: oklch(70% 0.16 248);
-  --color-fd-overlay: oklch(0% 0 0 / 0.2);
+  --color-fd-border: oklch(38% 0.02 250 / 0.3);
+  
+  /* Enhanced Primary - Lighter and More Vibrant in Dark Mode */
+  --color-fd-primary: oklch(76% 0.19 248);
+  --color-fd-primary-foreground: oklch(8% 0 0);
+  
+  --color-fd-secondary: oklch(17% 0.02 250 / 0.65);
+  --color-fd-secondary-foreground: oklch(94% 0.01 250);
+  
+  /* Enhanced Accent with Teal Tint */
+  --color-fd-accent: oklch(34% 0.1 210 / 0.4);
+  --color-fd-accent-foreground: oklch(92% 0.01 250);
+  
+  --color-fd-ring: oklch(72% 0.18 248);
+  --color-fd-overlay: oklch(0% 0 0 / 0.25);
 }
 
 .amoled {
-  --color-fd-background: oklch(2% 0 0);
+  /* Enhanced AMOLED Mode with Pure Black */
+  --color-fd-background: oklch(0% 0 0);
   --color-fd-foreground: oklch(98% 0.01 250);
-  --color-fd-muted: oklch(6% 0.01 250 / 0.6);
-  --color-fd-muted-foreground: oklch(78% 0.02 250 / 0.85);
-  --color-fd-popover: oklch(4% 0.01 250 / 0.55);
-  --color-fd-popover-foreground: oklch(92% 0.01 250);
-  --color-fd-card: oklch(3% 0.01 250 / 0.6);
-  --color-fd-card-foreground: oklch(96% 0.01 250);
-  --color-fd-border: oklch(25% 0.01 250 / 0.22);
-  --color-fd-primary: oklch(78% 0.18 248);
-  --color-fd-primary-foreground: oklch(6% 0 0);
-  --color-fd-secondary: oklch(6% 0.01 250 / 0.6);
-  --color-fd-secondary-foreground: oklch(94% 0.01 250);
-  --color-fd-accent: oklch(20% 0.05 250 / 0.35);
-  --color-fd-accent-foreground: oklch(94% 0.01 250);
-  --color-fd-ring: oklch(70% 0.16 248);
-  --color-fd-overlay: oklch(0% 0 0 / 0.3);
+  --color-fd-muted: oklch(4% 0.01 250 / 0.65);
+  --color-fd-muted-foreground: oklch(80% 0.02 250 / 0.9);
+  --color-fd-popover: oklch(2% 0.01 250 / 0.6);
+  --color-fd-popover-foreground: oklch(94% 0.01 250);
+  --color-fd-card: oklch(2% 0.01 250 / 0.65);
+  --color-fd-card-foreground: oklch(97% 0.01 250);
+  --color-fd-border: oklch(22% 0.01 250 / 0.25);
+  
+  --color-fd-primary: oklch(78% 0.19 248);
+  --color-fd-primary-foreground: oklch(4% 0 0);
+  
+  --color-fd-secondary: oklch(4% 0.01 250 / 0.65);
+  --color-fd-secondary-foreground: oklch(96% 0.01 250);
+  
+  --color-fd-accent: oklch(18% 0.06 250 / 0.4);
+  --color-fd-accent-foreground: oklch(96% 0.01 250);
+  
+  --color-fd-ring: oklch(72% 0.18 248);
+  --color-fd-overlay: oklch(0% 0 0 / 0.35);
 }
 
+/* ============================================
+   iOS 26 Liquid Tinted Enhancements
+   ============================================ */
+
+/* Enhanced Header Tint Pulse */
 [data-ui="liquid"] [data-liquid="tinted-header"] {
-  box-shadow: inset 0 0 0 0 color-mix(in oklch, var(--color-fd-primary) 12%, transparent);
-  animation: var(--animate-liquid-tint-pulse);
+  box-shadow: inset 0 0 0 0 color-mix(in oklch, var(--color-fd-primary) 15%, transparent);
+  animation: var(--animate-ios26-tint-pulse);
 }
 
+/* Enhanced Glass Morphism - Increased Blur */
 [data-ui="liquid"] .bg-fd-card,
 [data-ui="liquid"] .bg-fd-popover,
 [data-ui="liquid"] .bg-fd-secondary {
-  backdrop-filter: blur(var(--fd-glass-blur, 24px));
-  background-color: color-mix(in oklch, var(--color-fd-card) 85%, transparent);
-  box-shadow: inset 0 1px 0 color-mix(in oklch, var(--color-fd-foreground) 5%, transparent),
-    0 1.5px 4px color-mix(in oklch, var(--color-fd-foreground) 4%, transparent);
+  backdrop-filter: blur(var(--blur-ios26-lg));
+  background-color: color-mix(in oklch, var(--color-fd-card) 82%, transparent);
+  box-shadow: 
+    inset 0 1px 0 color-mix(in oklch, var(--color-fd-foreground) 6%, transparent),
+    0 1px 2px color-mix(in oklch, var(--color-fd-foreground) 2%, transparent),
+    0 4px 8px color-mix(in oklch, var(--color-fd-foreground) 3%, transparent),
+    0 8px 16px color-mix(in oklch, var(--color-fd-primary) 2%, transparent);
+  border: 1px solid color-mix(in oklch, var(--color-fd-border) 60%, transparent);
 }
 
+/* Enhanced Primary Button with Gradient */
 [data-ui="liquid"] .bg-fd-primary {
   background-image: linear-gradient(
-    to bottom,
-    color-mix(in oklch, var(--color-fd-primary) 92%, transparent),
-    color-mix(in oklch, var(--color-fd-primary) 70%, transparent)
+    135deg,
+    color-mix(in oklch, var(--color-fd-primary) 100%, transparent),
+    color-mix(in oklch, var(--color-fd-primary) 85%, transparent),
+    color-mix(in oklch, var(--color-fd-primary) 90%, transparent)
   );
+  background-size: 200% 200%;
+  box-shadow: 
+    0 2px 8px color-mix(in oklch, var(--color-fd-primary) 25%, transparent),
+    0 4px 16px color-mix(in oklch, var(--color-fd-primary) 15%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 15%, transparent);
+  transition: 
+    all var(--duration-ios26-normal) var(--ease-ios26-spring),
+    background-position var(--duration-ios26-slow) var(--ease-ios26-smooth);
+}
+
+[data-ui="liquid"] .bg-fd-primary:hover {
+  background-position: 100% 100%;
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 12px color-mix(in oklch, var(--color-fd-primary) 30%, transparent),
+    0 8px 24px color-mix(in oklch, var(--color-fd-primary) 20%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 20%, transparent);
+}
+
+[data-ui="liquid"] .bg-fd-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Enhanced Card with Radial Gradient Overlay */
+[data-ui="liquid"] [data-card] {
+  position: relative;
+  transition: 
+    transform var(--duration-ios26-normal) var(--ease-ios26-out),
+    box-shadow var(--duration-ios26-normal) var(--ease-ios26-out);
 }
 
 [data-ui="liquid"] [data-card]::before {
@@ -87,7 +154,43 @@
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background-image: radial-gradient(120% 60% at 10% 10%, color-mix(in oklch, var(--color-fd-primary) 10%, transparent), transparent 50%),
-    radial-gradient(120% 60% at 90% 90%, color-mix(in oklch, var(--color-fd-accent) 10%, transparent), transparent 50%);
-  opacity: 0.6;
+  background-image: 
+    radial-gradient(
+      circle at 15% 15%, 
+      color-mix(in oklch, var(--color-fd-primary) 12%, transparent), 
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 85%, 
+      color-mix(in oklch, var(--color-ios26-accent-purple) 10%, transparent), 
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklch, white 4%, transparent),
+      transparent 50%
+    );
+  opacity: 0.7;
+  transition: opacity var(--duration-ios26-normal) var(--ease-ios26-out);
+}
+
+[data-ui="liquid"] [data-card]:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 16px color-mix(in oklch, var(--color-fd-foreground) 4%, transparent),
+    0 8px 32px color-mix(in oklch, var(--color-fd-primary) 4%, transparent);
+}
+
+[data-ui="liquid"] [data-card]:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced Focus Rings with Colored Glow */
+[data-ui="liquid"] :focus-visible {
+  outline: 2px solid var(--color-fd-ring);
+  outline-offset: 2px;
+  box-shadow: 
+    0 0 0 4px var(--color-fd-background),
+    0 0 0 6px var(--color-fd-ring),
+    0 0 16px color-mix(in oklch, var(--color-fd-primary) 30%, transparent);
 }
